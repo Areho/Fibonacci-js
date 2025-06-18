@@ -12,3 +12,4 @@ function Array(inicio, fin) {
 }
 
 console.log(Array(5, 20));    // Llama a la función con los valores 5 y 20, e imprime el resultado en consola.
+

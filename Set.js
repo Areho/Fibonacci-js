@@ -1,5 +1,8 @@
 // Set
-function Set(inicio, fin) {     
+i = 5
+f = 20
+
+function fibonacciset(inicio, fin) {     
     let a = inicio;                      
     let b = inicio + 1;                   
     let resultado = new Set();  
@@ -8,7 +11,6 @@ function Set(inicio, fin) {
         resultado.add(a);               
         [a, b] = [b, a + b];            
     }
-    
-    return Array.from(resultado);         // Convierte el Set a un arreglo y lo retorna.
+    return resultado;       
 }
-console.log(Set(0, 20));       
+console.log(fibonacciset(i,f));       

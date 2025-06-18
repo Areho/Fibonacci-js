@@ -1,40 +1,62 @@
-function fibonacci(tipo, inicio, fin) {
-    let a = inicio;
-    let b = inicio + 1;
-    let resultado;
+//Array
+i = 0;
+f = 200
 
-    if (tipo === 'array') {
-        resultado = [];
-        while (a <= fin) {
-            resultado.push(a);
-            [a, b] = [b, a + b];
-        }
-        return resultado;
-    } else if (tipo === 'map') {
-        resultado = new Map();
-        let i = 0;
-        while (a <= fin) {
-            resultado.set(i, a);
-            [a, b] = [b, a + b];
-            i++;
-        }
-        return resultado;
-    } else if (tipo === 'set') {
-        resultado = new Set();
-        while (a <= fin) {
-            resultado.add(a);
-            [a, b] = [b, a + b];
-        }
-        return resultado;
-    } else {
-        throw new Error("Tipo no soportado. Usa 'array', 'map' o 'set'.");
+const fionacciarray = (inicio, fin) => { 
+    let a = inicio;           
+    let b = inicio + 1;       
+    let resultado = [];       
+
+    while (a <= fin) {        
+        resultado.push(a);   
+        [a, b] = [b, a + b];  
     }
+
+    return resultado;       
 }
 
-// Ejemplos de uso:
-console.log('Array:', fibonacci('array', 5, 20));
-console.log('Map:');
-fibonacci('map', 5, 20).forEach((valor, clave) => {
-    console.log(`Index ${clave}: ${valor}`);
-});
-console.log('Set:', fibonacci('set', 0, 20));
+// Mostrar resultados
+console.log("-Array")
+console.log(fionacciarray(i, f));   
+
+
+
+
+// Map
+
+const fibonaccimap = (inicio,fin) => {    
+    let a = inicio;                    
+    let b = inicio + 1;                   
+    let i = 0;                     
+    let resultado = new Map();          
+    while (a <= fin) {                
+        resultado.set(i, a);            
+        [a, b] = [b, a + b];             
+        i++;                              
+    }
+
+    return resultado;                     
+}
+
+// Mostrar resultados
+console.log("-Map")
+console.log(fibonaccimap(i,f))
+
+// Set
+
+
+const fibonacciset = (inicio,fin) => {  
+    let a = inicio;                      
+    let b = inicio + 1;                   
+    let resultado = new Set();  
+
+    while (a <= fin) {                    
+        resultado.add(a);               
+        [a, b] = [b, a + b];            
+    }
+    return resultado;       
+}
+
+// Mostrar resultados
+console.log("--Set")
+console.log(fibonacciset(i,f)); 
